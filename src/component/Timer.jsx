@@ -16,8 +16,6 @@ const Timer = (props) => {
     year: "numeric",
   });
 
-  //   console.log(date);
-
   const [timeNow, setTimeNow] = useState();
   const [time, setTime] = useState({ start: "", end: "" });
   const [countTime, calculateTime] = useState({ hours: 0, min: 0 });
