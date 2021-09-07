@@ -1,0 +1,27 @@
+version: "3.9" #
+services:
+  web:
+    image: node:16-alpine3.11
+    working_dir: /code
+    ports:
+      - "5000:3000"
+    volumes:
+      - .:/code
+    container_name: frontend-timer
+    command: npm start
+    depends_on:
+      - server
+    # restart: always
+  server:
+    image: node:16-alpine3.11
+    working_dir: /code
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./server:/code
+    container_name: server
+    command: npm run serve
+
+    # restart: always
+volumes:
+  database-data:
