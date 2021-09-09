@@ -4,14 +4,22 @@ const port = 7000;
 require("dotenv").config();
 
 const { Sequelize, Model, DataTypes } = require("sequelize");
-const sequelize = new Sequelize(
-  "postgres://" +
-    process.env.DB_USER +
-    ":" +
-    process.env.DB_PASS +
-    "@" +
-    process.env.POSTGRES_HOST || db + ":5432/" + process.env.DB_NAME
-);
+// const sequelize = new Sequelize(
+//   "postgres://" +
+//     process.env.DB_USER +
+//     ":" +
+//     process.env.DB_PASS +
+//     "@" +
+//     process.env.POSTGRES_HOST || db + ":5432/" + process.env.DB_NAME
+// );
+// process.env.DB_NAME,
+// process.env.DB_USER,
+// process.env.DB_PASS,
+const sequelize = new Sequelize("timer_db", "developer", "123456", {
+  host: "db-timer",
+  port: 5432,
+  dialect: "postgres",
+});
 
 (async () => {
   await sequelize.sync();

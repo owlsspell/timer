@@ -11,7 +11,7 @@ services:
     command: npm start
     depends_on:
       - server
-      - db
+      - db-timer
     restart: always
   server:
     image: node:16-alpine3.11
@@ -23,21 +23,26 @@ services:
     container_name: server
     command: npm run serve
     environment:
-      POSTGRES_HOST: db
+      POSTGRES_HOST: db-timer
     depends_on:
-      - db
+      - db-timer
     restart: always
-  db:
+  db-timer:
     image: postgres:13.3
-    container_name: postgress-for-timer
+    container_name: pg_timer
     ports:
-      - "5435:5432"
+      - "5432:5432"
     volumes:
       - ./db-files:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: process.env.PASS
-      POSTGRES_DB: process.env.NAME
-      POSTGRES_USER: process.env.USER
+      # POSTGRES_PASSWORD: process.env.DB_PASS
+      # POSTGRES_DB: process.env.DB_NAME
+      # POSTGRES_USER: process.env.DB_USER
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: timer_db
+    
+   
       # restart: always
 volumes:
-  database-data:
+  db-files:
