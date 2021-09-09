@@ -16,6 +16,8 @@ const Timer = (props) => {
     year: "numeric",
   });
 
+  // console.log(date);
+
   const [timeNow, setTimeNow] = useState();
   const [time, setTime] = useState({ start: "", end: "" });
   const [countTime, calculateTime] = useState({ hours: 0, min: 0 });
@@ -23,7 +25,7 @@ const Timer = (props) => {
   const [intervalId, setIntervalId] = useState();
 
   console.log(time);
-  console.log("isActive " + isActive);
+  // console.log("isActive " + isActive);
 
   const startTimer = () => {
     if (!isActive) {
