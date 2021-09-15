@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Form } from "react-bootstrap";
 
 const Register = (props) => {
-  const signUp = (e) => {
-    console.log(e);
-  };
+  // const signUp = (e) => {
+  //   console.log(e);
+  // };
 
   const handleChange = (e, fieldName) => {
     console.log(fieldName);

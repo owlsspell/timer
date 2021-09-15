@@ -35,14 +35,9 @@ services:
     volumes:
       - ./db-files:/var/lib/postgresql/data
     environment:
-      # POSTGRES_PASSWORD: process.env.DB_PASS
-      # POSTGRES_DB: process.env.DB_NAME
-      # POSTGRES_USER: process.env.DB_USER
-      POSTGRES_USER: developer
-      POSTGRES_PASSWORD: 123456
-      POSTGRES_DB: timer_db
-    
-   
-      # restart: always
+      POSTGRES_PASSWORD: process.env.DB_PASS
+      POSTGRES_DB: process.env.DB_NAME
+      POSTGRES_USER: process.env.DB_USER
+      restart: always
 volumes:
   db-files:
