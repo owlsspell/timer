@@ -1,9 +1,21 @@
 .backLayar {
-  background-color: #8fb7fe;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 0.6615021008403361) 35%,
+    rgba(143, 233, 254, 1) 100%
+  );
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -12,11 +24,20 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #6d727c;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -26,27 +47,48 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@-webkit-keyframes App-logo-spin {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
 .cardContainer {
+  position: relative;
   border-radius: 20px;
-  width: 18rem;
-  padding: 20px;
+  width: 19rem;
+  padding: 0 20px 40px 20px;
   color: black;
+  -webkit-box-shadow: 10px 10px 7px 0px rgba(7, 68, 114, 0.22);
   box-shadow: 10px 10px 7px 0px rgba(7, 68, 114, 0.22);
   background-color: #fff;
 }
 
 .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -57,7 +99,11 @@
 }
 
 .timeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
 }
 
@@ -72,3 +118,39 @@
   height: auto;
   background-color: #fff;
 }
+
+.cardHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+.cardHeader div {
+  width: 50%;
+  cursor: pointer;
+}
+
+.cardHeader div:first-child {
+  border-right: 1px solid #ced4da;
+  margin-bottom: 0;
+}
+
+.cardHeader div.active {
+  background-color: #ced4da;
+}
+
+.btn__auth {
+  width: 100%;
+  margin-top: 20px;
+}
+#btn__out {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 25px;
+}
+
+/*# sourceMappingURL=App.css.map */
